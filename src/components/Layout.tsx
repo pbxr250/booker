@@ -4,13 +4,15 @@
   } from "@demark-pro/react-booking-calendar";
   //import "./index.css";
 
-  import {_reserved} from "../tests/testdata"
+  import { _reserved } from "../tests/testdata"
+  import { tgWebApp } from "../utils/webapp"
   
   import { EventsCalendar } from "./EventsCalendar";
   import { useState } from "react";
   import { startOfToday, format, isSameDay } from "date-fns";
   
   const oneDay = 86400000;
+  let a = tgWebApp
   const today = new Date().getTime() + oneDay;
   
   const reserved: CalendarReserved[] = _reserved
@@ -33,6 +35,13 @@
     const [selectedDate] = selected;
     //console.log(selected)
     //console.log(selectedDate)
+
+    let tg
+    try {
+      tg = window.Telegram.WebApp 
+      } catch (e) {
+      console.log('Error window.Telegram.WebApp')
+      }
   
     return (
       <div className="max-w-sm mx-auto">
