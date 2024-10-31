@@ -36,12 +36,6 @@
     //console.log(selected)
     //console.log(selectedDate)
 
-    let tg
-    try {
-      tg = window.Telegram.WebApp 
-      } catch (e) {
-      console.log('Error window.Telegram.WebApp')
-      }
   
     return (
       <div className="max-w-sm mx-auto">
