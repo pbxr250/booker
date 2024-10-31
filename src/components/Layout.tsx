@@ -11,8 +11,8 @@
   import { useState } from "react";
   import { startOfToday, format, isSameDay } from "date-fns";
   
+  const userdata = tgWebApp.initData as string
   const oneDay = 86400000;
-  let a = tgWebApp
   const today = new Date().getTime() + oneDay;
   
   const reserved: CalendarReserved[] = _reserved
@@ -74,6 +74,11 @@
                 {format(event.endDate, "dd-MM-yyyy")}
               </p>
             ))}
+
+        <h3 className="text-lg font-semibold">
+          Console log: User data:
+          {userdata}
+        </h3>
       </div>
     );
   }
