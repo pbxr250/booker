@@ -13,7 +13,7 @@ export const userdata = {
 userdata.user = windowExt.Telegram?.WebApp?.initDataUnsafe?.user?.id ?? ''
 userdata.username = windowExt.Telegram?.WebApp?.initDataUnsafe?.user?.username ?? ''
 
-//console.log(windowExt.Telegram.WebApp.initData)
-//console.log(windowExt.Telegram.WebApp.initDataUnsafe)
+console.log('Debug log from webapp.ts, initdata:' + windowExt.Telegram.WebApp.initData)
+console.log('Debug log from webapp.ts' + windowExt.Telegram.WebApp.initDataUnsafe)
 
 export const tgWebApp = windowExt.Telegram.WebApp
