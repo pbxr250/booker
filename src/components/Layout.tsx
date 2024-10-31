@@ -5,13 +5,12 @@
   //import "./index.css";
 
   import { _reserved } from "../tests/testdata"
-  import { tgWebApp } from "../utils/webapp"
+  import { tgWebApp, userdata } from "../utils/webapp"
   
   import { EventsCalendar } from "./EventsCalendar";
   import { useState } from "react";
   import { startOfToday, format, isSameDay } from "date-fns";
   
-  const userdata = tgWebApp.initData as string
   const oneDay = 86400000;
   const today = new Date().getTime() + oneDay;
   
@@ -27,6 +26,7 @@
     };
   });
 
+
   
   export default function Layout() {
     const [selected, setSelected] = useState<CalendarSelected[]>([startOfToday(),null]);
@@ -36,6 +36,9 @@
     //console.log(selected)
     //console.log(selectedDate)
 
+    const handleClick = () => {
+      tgWebApp.sendData(JSON.stringify(userdata));
+    };
   
     return (
       <div className="max-w-sm mx-auto">
@@ -73,8 +76,9 @@
           Console log: User data:
         </h3>
         <h3 className="text-lg font-semibold">
-          {userdata}
+          {userdata.user} - {userdata.username}
         </h3>
+        <button onClick={handleClick}>Send userdata to admin!</button>
       </div>
     );
   }
