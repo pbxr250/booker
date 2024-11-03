@@ -26,12 +26,12 @@ export const mode = (( value: string ) => {
     return MODE.IncorrectMode
 })( windowExt.location.search.split('=')[1])
 
-if (import.meta.env.DEV) {
-    console.log(`Debug log from webapp.ts,href: ${windowExt.location.href} `)
-    console.log(`Debug log from webapp.ts, MODE: ${mode} `)
-    console.log(`Debug log from webapp.ts, initstring: ${windowExt.Telegram?.WebApp?.initData}`)
-    console.log(`Debug log from webapp.ts, userdata: ${userdata.user} ${userdata.username} ${userdata.query_id}`)
-    //console.log('Debug log from webapp.ts' + windowExt.Telegram.WebApp.initDataUnsafe)
-}
+
+console.log(`Debug log from webapp.ts,href: ${windowExt.location.href} `)
+console.log(`Debug log from webapp.ts, MODE: ${mode} `)
+console.log(`Debug log from webapp.ts, initstring: ${windowExt.Telegram?.WebApp?.initData}`)
+console.log(`Debug log from webapp.ts, userdata: ${userdata.user} ${userdata.username} ${userdata.query_id}`)
+//console.log('Debug log from webapp.ts' + windowExt.Telegram.WebApp.initDataUnsafe)
+
 
 export const tgWebApp = windowExt.Telegram.WebApp
